@@ -41,7 +41,6 @@
     }
     .logo-icon img { height: 40px; width: auto; }
     .logo-text img { height: 28px; width: auto; }
-    /* version footer blanc */
     footer img[src="logo_combined.png"] { filter: brightness(0) invert(1); }
     .nav-cta {
       background: var(--vert);
@@ -111,18 +110,19 @@
       font-style: italic;
       color: var(--gold);
     }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 400;
+      margin-bottom: 24px;
+      animation: fadeUp .7s .2s ease both;
+      max-width: 500px;
+    }
     .hero-sub {
       font-size: 1.05rem; font-weight: 300; line-height: 1.6;
       color: #555;
       max-width: 420px;
       margin-bottom: 40px;
-      animation: fadeUp .7s .2s ease both;
-    }
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: #555;
-      font-weight: 400;
-      margin-bottom: 24px;
       animation: fadeUp .7s .25s ease both;
     }
 
@@ -168,18 +168,6 @@
     }
     .form-note a { color: var(--vert); }
 
-    /* success */
-    .success-msg {
-      display: none;
-      background: var(--menthe);
-      border-radius: 16px;
-      padding: 20px 24px;
-      color: var(--vert);
-      font-weight: 500;
-      font-size: 0.95rem;
-      animation: fadeUp .4s ease both;
-    }
-
     /* ── HERO RIGHT ── */
     .hero-right {
       background: var(--vert);
@@ -199,11 +187,6 @@
       width: 250px; height: 250px;
       background: var(--menthe); border-radius: 50%; opacity: .15;
     }
-
-    .counter-block {
-      text-align: center; z-index: 1;
-      animation: fadeUp .8s .4s ease both;
-    }
     .counter-num {
       font-family: 'Playfair Display', serif;
       font-size: clamp(4rem, 7vw, 6rem);
@@ -217,39 +200,7 @@
       margin-top: 8px;
     }
 
-    .divider-line {
-      width: 60px; height: 1px;
-      background: rgba(255,255,255,.2);
-      margin: 36px auto;
-      z-index: 1;
-    }
-
-    .promise-list { z-index: 1; width: 100%; display: flex; flex-direction: column; gap: 14px; }
-    .promise-item {
-      display: flex; align-items: flex-start; gap: 14px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 18px 20px;
-      animation: fadeUp .7s ease both;
-      transition: background .2s;
-    }
-    .promise-item:hover { background: rgba(255,255,255,0.13); }
-    .promise-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: var(--gold);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-    }
-    .promise-text { flex: 1; }
-    .promise-title {
-      font-size: 0.9rem; font-weight: 500; color: #fff;
-      margin-bottom: 3px;
-    }
-    .promise-desc { font-size: 0.78rem; color: var(--menthe); font-weight: 300; line-height: 1.5; }
-
-    /* ── HOW IT WORKS ── */
+    /* ── STEPS ── */
     .section { padding: 100px 80px; }
     .section-label {
       font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
@@ -261,7 +212,6 @@
       color: var(--vert); line-height: 1.2;
       margin-bottom: 60px;
     }
-
     .steps {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
     }
@@ -270,7 +220,6 @@
       border-radius: 20px;
       padding: 36px 28px;
       border: 1px solid rgba(27,67,50,0.08);
-      position: relative; overflow: hidden;
       transition: transform .2s, box-shadow .2s;
     }
     .step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(27,67,50,0.1); }
@@ -290,37 +239,36 @@
     }
     .step-desc { font-size: 0.88rem; color: #666; line-height: 1.6; }
 
-    /* ── SOCIAL PROOF ── */
-    .proof-section {
-      background: var(--vert);
-      padding: 80px;
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 2px;
+    /* ── PROMISES ── */
+    .promise-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 18px 20px;
+      animation: fadeUp .7s ease both;
     }
-    .proof-item {
-      text-align: center; padding: 48px 32px;
-      background: var(--vert);
+    .promise-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
     }
-    .proof-item:nth-child(2) { background: #163829; }
-    .proof-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem; color: var(--gold);
-      line-height: 1; margin-bottom: 10px;
+    .promise-title {
+      font-size: 0.9rem; font-weight: 500; color: #fff;
+      margin-bottom: 3px;
     }
-    .proof-label { font-size: 0.85rem; color: var(--menthe); font-weight: 300; }
+    .promise-desc {
+      font-size: 0.78rem; color: var(--menthe);
+      font-weight: 300; line-height: 1.5;
+    }
 
-    /* ── FOOTER CTA ── */
+    /* ── FOOTER ── */
     .footer-cta {
       padding: 100px 80px;
       text-align: center;
       position: relative; overflow: hidden;
-    }
-    .footer-cta::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(176,198,183,0.3) 0%, transparent 70%);
-      border-radius: 50%;
     }
     .footer-cta h2 {
       font-family: 'Playfair Display', serif;
@@ -328,44 +276,27 @@
       color: var(--vert); margin-bottom: 16px;
       position: relative; z-index: 1;
     }
-    .footer-cta p {
-      color: #666; font-size: 1rem; font-weight: 300;
-      margin-bottom: 40px; max-width: 480px; margin-inline: auto;
-      position: relative; z-index: 1;
-    }
-    .footer-cta .form-row {
-      max-width: 480px; margin: 0 auto;
-      position: relative; z-index: 1;
-    }
-
-    /* ── FOOTER ── */
     footer {
       background: var(--noir);
       padding: 32px 80px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    footer .logo { color: #fff; }
     footer p { font-size: 0.78rem; color: #888; }
     footer a { color: #888; text-decoration: none; }
     footer a:hover { color: var(--menthe); }
 
-    /* ── ANIMATIONS ── */
+    /* ── ANIMATIONS & RESPONSIVE ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 60px 32px; }
-      .hero-right { padding: 60px 32px; min-height: 50vh; }
+      .hero-left, .hero-right { padding: 60px 32px; }
       nav { padding: 16px 24px; }
-      .section { padding: 70px 32px; }
+      .section, .footer-cta { padding: 70px 32px; }
       .steps { grid-template-columns: 1fr; }
-      .proof-section { grid-template-columns: 1fr; padding: 60px 32px; }
-      .footer-cta { padding: 70px 32px; }
-      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
     }
   </style>
 </head>
@@ -382,42 +313,41 @@
   </div>
 </nav>
 
-<!-- 1. HERO : beige + vert côte à côte -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="badge"><span class="badge-dot"></span>Coming soon</div>
     <h1>Un bon plat au restaurant,<br/><em>à prix malin.</em></h1>
-    <p class="hero-subtitle">Des plats de qualité à prix réduits pendant les heures creuses, pour éviter le gaspillage et soutenir les restaurants.</p>
-    <p class="hero-sub">GreenToque connecte les gourmets et les restaurants.<br/><br/>Soyez parmi les premiers à rejoindre une communauté de gourmands malins et engagés !</p>
-    <div class="form-block" id="waitlist">
+    <p class="hero-subtitle">
+      Des plats de qualité à prix réduits pendant les heures creuses, pour éviter le gaspillage et soutenir les restaurants.
+    </p>
+    <p class="hero-sub">
+      GreenToque connecte les gourmets et les restaurants.<br/><br/>
+      Soyez parmi les premiers à rejoindre une communauté de gourmands malins et engagés !
+    </p>
+    <div class="form-block">
       <a href="https://forms.gle/5whzXFcTwCTvBPUPA" target="_blank" class="form-submit" style="display:inline-block; font-size:1rem; padding:16px 36px; text-decoration:none; background:var(--gold); border-radius:100px;">Rejoindre la communauté →</a>
       <p class="form-note">Accès en avant-première · Sans engagement</p>
     </div>
   </div>
-
   <div class="hero-right">
-    <div style="display:flex; flex-direction:column; align-items:center; gap:40px; width:100%; z-index:1;">
-      <!-- 1 en haut centré -->
-      <div style="text-align:center;">
-        <div style="font-family:'Playfair Display',serif; font-size:3.8rem; color:var(--gold); font-weight:700; margin-bottom:10px;">30 à 50%</div>
-        <div style="font-size:1rem; color:var(--menthe); font-weight:300; line-height:1.5;">de réduction sur votre plat préféré</div>
-      </div>
-      <!-- 2 en bas -->
-      <div style="display:flex; flex-direction:row; gap:100px; justify-content:center; width:100%;">
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--gold); font-weight:700; margin-bottom:8px;">0</div>
-          <div style="font-size:0.85rem; color:var(--menthe); font-weight:300; line-height:1.5;">gaspillage alimentaire</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--gold); font-weight:700; margin-bottom:8px;">100%</div>
-          <div style="font-size:0.85rem; color:var(--menthe); font-weight:300; line-height:1.5;">de plaisir gourmand</div>
-        </div>
-      </div>
+    <div style="text-align:center; z-index:1;">
+      <div style="font-family:'Playfair Display',serif; font-size:3.8rem; color:var(--gold); font-weight:700; margin-bottom:10px;">30 à 50%</div>
+      <div style="font-size:1rem; color:var(--menthe); font-weight:300;">de réduction sur votre plat préféré</div>
     </div>
+    <div style="display:flex; justify-content:center; gap:100px; margin-top:40px; z-index:1;">
+      <div style="text-align:center;">
+        <div style="font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--gold); font-weight:700; margin-bottom:8px;">0</div>
+        <div style="font-size:0.85rem; color:var(--menthe); font-weight:300;">gaspillage alimentaire</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--gold); font-weight:700; margin-bottom:8px;">100%</div>
+        <div style="font-size:0.85rem; color:var(--menthe); font-weight:300;">de plaisir gourmand</div>
+      </div>
   </div>
 </section>
 
-<!-- 3. COMMENT ÇA MARCHE -->
+<!-- COMMENT ÇA MARCHE -->
 <section class="section">
   <div class="section-label">Comment ça marche ?</div>
   <div class="section-title">Je réserve en 3 étapes et je n'ai plus qu'à déguster sur place !</div>
@@ -438,57 +368,51 @@
       <div class="step-num">03</div>
       <div class="step-icon">🍽</div>
       <div class="step-title">Je profite et je contribue</div>
-      <div class="step-desc">Tu dégustes un excellent repas à prix réduit. Le restaurant remplit ses heures creuses. Le gaspillage diminue. Tout le monde gagne.<br/><strong>Offres disponibles uniquement pendant les créneaux proposés par le restaurateur.</strong></div>
+      <div class="step-desc">
+        Tu dégustes un excellent repas à prix réduit. Le restaurant remplit ses heures creuses. Le gaspillage diminue. Tout le monde gagne.<br/>
+        <strong>Offres disponibles uniquement pendant les créneaux proposés par le restaurateur.</strong>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4. PROMESSES sur fond vert avec compteur -->
-<div style="background:var(--vert); position:relative; overflow:hidden; padding:80px 80px;">
-  <!-- Cercles décoratifs -->
-  <div style="position:absolute; top:-80px; right:-80px; width:300px; height:300px; background:var(--gold); border-radius:50%; opacity:.1;"></div>
-  <div style="position:absolute; bottom:-100px; left:-60px; width:250px; height:250px; background:var(--menthe); border-radius:50%; opacity:.12;"></div>
-
-  <!-- Compteur -->
-  <div style="text-align:center; z-index:1; position:relative; margin-bottom:48px;">
+<!-- PROMESSES -->
+<div style="background:var(--vert); padding:80px; position:relative; overflow:hidden;">
+  <div style="text-align:center; margin-bottom:48px; z-index:1;">
     <div style="font-family:'Playfair Display',serif; font-size:clamp(4rem,7vw,6rem); color:#fff; line-height:1;" id="counter2">0</div>
-    <div style="font-size:0.9rem; color:var(--menthe); font-weight:300; letter-spacing:1px; text-transform:uppercase; margin-top:8px;">personnes déjà inscrites</div>
+    <div style="font-size:0.9rem; color:var(--menthe); font-weight:300; letter-spacing:1px; text-transform:uppercase;">personnes déjà inscrites</div>
   </div>
-
-  <!-- Divider -->
-  <div style="width:60px; height:1px; background:rgba(255,255,255,.2); margin:0 auto 48px auto; z-index:1; position:relative;"></div>
-
-  <!-- 3 encarts -->
-  <div style="display:flex; flex-direction:column; gap:14px; max-width:600px; margin:0 auto; position:relative; z-index:1;">
-    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:18px 20px;">
-      <div style="width:40px;height:40px;flex-shrink:0;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🏆</div>
+  <div style="width:60px; height:1px; background:rgba(255,255,255,.2); margin:0 auto 48px auto;"></div>
+  <div style="max-width:600px; margin:0 auto;">
+    <div class="promise-item">
+      <div class="promise-icon">🏆</div>
       <div>
-        <div style="font-size:0.9rem;font-weight:500;color:#fff;margin-bottom:3px;">Restaurants sélectionnés</div>
-        <div style="font-size:0.78rem;color:var(--menthe);font-weight:300;">Uniquement des indépendants de qualité, vérifiés par notre équipe</div>
+        <div class="promise-title">Restaurants sélectionnés</div>
+        <div class="promise-desc">Uniquement des indépendants de qualité, vérifiés par notre équipe</div>
       </div>
     </div>
-    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:18px 20px;">
-      <div style="width:40px;height:40px;flex-shrink:0;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">⚡</div>
+    <div class="promise-item" style="margin-top:14px;">
+      <div class="promise-icon">⚡</div>
       <div>
-        <div style="font-size:0.9rem;font-weight:500;color:#fff;margin-bottom:3px;">Offres en temps réel</div>
-        <div style="font-size:0.78rem;color:var(--menthe);font-weight:300;">Les meilleures tables disponibles, au bon moment</div>
+        <div class="promise-title">Offres en temps réel</div>
+        <div class="promise-desc">Les meilleures tables disponibles, au bon moment</div>
       </div>
     </div>
-    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:18px 20px;">
-      <div style="width:40px;height:40px;flex-shrink:0;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🌱</div>
+    <div class="promise-item" style="margin-top:14px;">
+      <div class="promise-icon">🌱</div>
       <div>
-        <div style="font-size:0.9rem;font-weight:500;color:#fff;margin-bottom:3px;">Impact anti-gaspi</div>
-        <div style="font-size:0.78rem;color:var(--menthe);font-weight:300;">Chaque réservation réduit le gaspillage alimentaire dans vos restaurants</div>
+        <div class="promise-title">Impact anti-gaspi</div>
+        <div class="promise-desc">Chaque réservation réduit le gaspillage alimentaire dans vos restaurants</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 5. FOOTER CTA -->
+<!-- FOOTER CTA -->
 <section class="footer-cta">
-  <h2>Et si votre prochain repas était aussi savoureux qu'avantageux…&nbsp; et responsable ?</h2>
+  <h2>Et si votre prochain repas était aussi savoureux qu'avantageux… et responsable ?</h2>
   <p>Rejoins la communauté GreenToque en avant-première et fais partie des premiers gourmands à prendre part à l'aventure.</p>
-  <a href="https://forms.gle/5whzXFcTwCTvBPUPA" target="_blank" class="form-submit" style="display:inline-block; font-size:1rem; padding:16px 36px; text-decoration:none; background:var(--vert); border-radius:100px; position:relative; z-index:1;">Rejoindre la communauté →</a>
+  <a href="https://forms.gle/5whzXFcTwCTvBPUPA" target="_blank" class="form-submit" style="display:inline-block; font-size:1rem; padding:16px 36px; text-decoration:none; background:var(--vert); border-radius:100px;">Rejoindre la communauté →</a>
 </section>
 
 <!-- FOOTER -->
@@ -497,11 +421,10 @@
     <img src="logo_combined.png" alt="GreenToque" style="height:48px; width:auto;"/>
   </div>
   <p>© 2026 GreenToque · <a href="confidentialite.html">Politique de confidentialité</a></p>
-  <p><a href="/cdn-cgi/l/email-protection#1b7874756f7a786f7c697e7e756f746a6e7e5b7c767a727735787476"><span class="__cf_email__" data-cfemail="0d6e6263796c6e796a7f68686379627c78684d6a606c6461236e6260">[email&#160;protected]</span></a></p>
 </footer>
 
 <script>
-  // Compteur animé
+  // Compteur animé (fonctionnel)
   (function() {
     function startCounter() {
       var el = document.getElementById('counter2');
@@ -514,8 +437,8 @@
         var progress = Math.min((timestamp - start) / duration, 1);
         var eased = 1 - Math.pow(1 - progress, 3);
         el.textContent = Math.floor(eased * target).toLocaleString('fr-FR');
-        if (progress < 1) { requestAnimationFrame(step); }
-        else { el.textContent = target.toLocaleString('fr-FR'); }
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString('fr-FR');
       }
       requestAnimationFrame(step);
     }
