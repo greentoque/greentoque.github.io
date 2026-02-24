@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentions légales — GreenToque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --vert:   #1B4332;
+      --menthe: #B0C6B7;
+      --gold:   #D4A017;
+      --creme:  #F7F3ED;
+      --noir:   #2C2C2C;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--creme);
+      color: var(--noir);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(247,243,237,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27,67,50,0.1);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--vert);
+      color: #fff;
+      border: none; border-radius: 100px;
+      padding: 10px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: #163829; transform: translateY(-1px); }
+
+    /* ── HERO BANNER ── */
+    .hero-banner {
+      margin-top: 80px;
+      background: var(--vert);
+      padding: 70px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 250px; height: 250px;
+      background: var(--gold); border-radius: 50%; opacity: .1;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -40px;
+      width: 200px; height: 200px;
+      background: var(--menthe); border-radius: 50%; opacity: .12;
+    }
+    .hero-banner .label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+    .hero-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      line-height: 1.2;
+      position: relative; z-index: 1;
+      margin-bottom: 12px;
+    }
+    .hero-banner p {
+      color: var(--menthe); font-weight: 300; font-size: 0.9rem;
+      position: relative; z-index: 1;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 40px 80px 40px;
+    }
+
+    .intro {
+      font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+      color: #555;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(27,67,50,0.1);
+    }
+
+    .article {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(27,67,50,0.08);
+    }
+    .article:last-child { border-bottom: none; }
+
+    .article-num {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--vert);
+      margin-bottom: 20px;
+    }
+    .article p {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .article p:last-child { margin-bottom: 0; }
+    .article ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+    .article ul li {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+      color: #555;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+    .article ul li::before {
+      content: '•';
+      position: absolute; left: 0;
+      color: var(--gold); font-weight: 700;
+    }
+    .article a { color: var(--vert); }
+    .article a:hover { color: var(--gold); }
+    .article strong { color: var(--noir); font-weight: 500; }
+
+    .highlight-box {
+      background: rgba(176,198,183,0.2);
+      border-left: 3px solid var(--vert);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p { color: var(--noir); font-weight: 400; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--noir);
+      padding: 32px 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer p { font-size: 0.78rem; color: #888; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: var(--menthe); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .hero-banner { padding: 50px 32px; }
+      .content { padding: 50px 24px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo_combined.png" alt="GreenToque" style="height:48px; width:auto;"/>
+  </a>
+  <a href="index.html" class="nav-cta">← Retour au site</a>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <div class="label">Informations légales</div>
+  <h1>Mentions légales</h1>
+  <p>Conformément à la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN)</p>
+</div>
+
+<!-- CONTENU -->
+<div class="content">
+
+  <p class="intro">Les informations suivantes sont portées à la connaissance des utilisateurs du site GreenToque, conformément aux obligations légales en vigueur.</p>
+
+  <div class="article">
+    <div class="article-num">Article 1</div>
+    <h2>Éditeur du site</h2>
+    <p>Le présent site est édité par :</p>
+    <div class="highlight-box">
+      <p><strong>GreenToque</strong><br/>
+      Fondatrice : Anne-Laure Lannou<br/>
+      Statut : En cours d'immatriculation<br/>
+      Adresse : À venir<br/>
+      Email : <a href="/cdn-cgi/l/email-protection#98fbf7f6ecf9fbecffeafdfdf6ecf7e9edfdd8fff5f9f1f4b6fbf7f5"><span class="__cf_email__" data-cfemail="3a5955544e5b594e5d485f5f544e554b4f5f7a5d575b535614595557">[email&#160;protected]</span></a></p>
+    </div>
+    <p>Les informations relatives au numéro SIRET, à la forme juridique et à l'adresse du siège social seront mises à jour dès l'immatriculation de l'entreprise.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 2</div>
+    <h2>Directeur de la publication</h2>
+    <p>Le directeur de la publication est : <strong>Anne-Laure Lannou</strong></p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 3</div>
+    <h2>Hébergement</h2>
+    <p>Le site est hébergé par :</p>
+    <div class="highlight-box">
+      <p><strong>GitHub, Inc.</strong><br/>
+      Adresse : 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br/>
+      Site web : <a href="https://github.com" target="_blank">github.com</a></p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 4</div>
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble des contenus présents sur le site GreenToque (textes, images, graphismes, logo, vidéos, structure, design, etc.) est protégé par les lois en vigueur relatives à la propriété intellectuelle.</p>
+    <p>Toute reproduction, représentation, modification, publication, adaptation, totale ou partielle, des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable.</p>
+    <p>Toute exploitation non autorisée du site ou de l'un quelconque de ses éléments pourra être considérée comme constitutive d'une contrefaçon.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 5</div>
+    <h2>Responsabilité</h2>
+    <p>GreenToque s'efforce de fournir des informations aussi précises que possible. Toutefois, le site ne pourra être tenu responsable des omissions, inexactitudes ou carences dans la mise à jour.</p>
+    <p>L'utilisateur est seul responsable de l'utilisation des informations disponibles sur le site.</p>
+    <p>GreenToque ne pourra être tenu responsable des dommages directs ou indirects résultant de l'accès ou de l'utilisation du site.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 6</div>
+    <h2>Liens hypertextes</h2>
+    <p>Le site peut contenir des liens vers d'autres sites. GreenToque ne peut être tenu responsable du contenu de ces sites tiers.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 7</div>
+    <h2>Données personnelles</h2>
+    <p>Les informations relatives à la collecte et au traitement des données personnelles sont détaillées dans la <a href="confidentialite.html">politique de confidentialité</a> accessible sur le site.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 8</div>
+    <h2>Cookies</h2>
+    <p>Le site GreenToque n'utilise actuellement aucun cookie à des fins publicitaires ou d'analyse.</p>
+    <p>Cependant, certains cookies techniques peuvent être déposés par l'hébergeur ou nécessaires au bon fonctionnement du site. Si des cookies non essentiels sont ajoutés à l'avenir, un mécanisme de consentement conforme sera mis en place.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 9</div>
+    <h2>Droit applicable</h2>
+    <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-num">Article 10</div>
+    <h2>Contact</h2>
+    <p>Pour toute question concernant le site : <a href="/cdn-cgi/l/email-protection#07646869736664736075626269736876726247606a666e6b2964686a"><span class="__cf_email__" data-cfemail="c2a1adacb6a3a1b6a5b0a7a7acb6adb3b7a782a5afa3abaeeca1adaf">[email&#160;protected]</span></a></p>
+  </div>
+
+  <p style="font-size:0.82rem; color:#999; font-style:italic; text-align:right; margin-top:40px; padding-top:32px; border-top:1px solid rgba(27,67,50,0.08);">Dernière mise à jour : 24 février 2026 · © 2026 GreenToque – Tous droits réservés</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="logo">
+    <img src="logo_combined.png" alt="GreenToque" style="height:48px; width:auto; filter:brightness(0) invert(1);"/>
+  </a>
+  <p>© 2026 GreenToque · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Politique de confidentialité</a> · <a href="https://bit.ly/désabonnementgreentoque" target="_blank">Se désinscrire</a></p>
+</footer>
+
+</body>
+</html>
